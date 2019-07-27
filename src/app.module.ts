@@ -1,12 +1,10 @@
 import {MiddlewareConsumer, Module} from '@nestjs/common';
-import { AppController } from './app.controller';
 import { FrontendMiddleware } from './frontend.middleware';
-import { AppService } from './app.service';
 
 @Module({
   imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
