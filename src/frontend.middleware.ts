@@ -23,7 +23,7 @@ export class FrontendMiddleware implements NestMiddleware {
     const { url } = req;
     if (url.indexOf('api') === 1) {
       // it starts with /api --> continue with execution
-      console.log('go to api')
+      console.log('go to api');
       next();
     } else if (allowedExt.filter(ext => url.indexOf(ext) > 0).length > 0) {
       res.sendFile(resolvePath(url));
