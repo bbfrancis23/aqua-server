@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
-import { CreateThemeDto } from './dto/create-theme.dto';
-import { ThemesService } from './themes.service';
-import { Theme } from './interfaces/theme.interface';
+import { Controller, Get, Post, Body } from '@nestjs/common'
+import { CreateThemeDto } from './dto/create-theme.dto'
+import { ThemesService } from './themes.service'
+import { Theme } from './interfaces/theme.interface'
 
 @Controller('api/themes')
 export class ThemesController {
@@ -9,13 +9,11 @@ export class ThemesController {
 
   @Post()
   async create(@Body() createThemeDto: CreateThemeDto) {
-    await this.themesService.create(createThemeDto);
+    await this.themesService.create(createThemeDto)
   }
 
   @Get()
   async findAll(): Promise<Theme[]> {
-
-    console.log('looking for themes')
-    return this.themesService.findAll();
+    return this.themesService.findAll()
   }
 }
